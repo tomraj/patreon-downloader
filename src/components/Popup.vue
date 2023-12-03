@@ -217,8 +217,11 @@ export default {
     }
 
     this.sendMessage({getSubfolder: true}).then( ret => {
-      console.log('Creator Name: ' + ret.response)
-      this.creatorName = ret.response;
+      console.log('Creator Name: ' + ret.response);
+      this.creatorName = ret.response
+        .replace('/', '\u29F8').replace('\\', '\u29F9').replace('|', '\u2502')
+        .replace('*', '\uFE61').replace('?', '\uFF1F').replace('"', '\u201D')
+        .replace(':', '\u2236').replace('<', '\u1438').replace('>', '\u1433');
     } );
 
     // options to load
